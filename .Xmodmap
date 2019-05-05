@@ -1,0 +1,21 @@
+! set capslock to act as control
+! remove Lock = Caps_Lock
+! remove Control = Control_L
+! keysym Caps_Lock = Control_L
+! add Lock = Caps_Lock
+! add Control = Control_L
+
+keycode 66 = Control_L
+clear Lock
+add Control = Control_L
+
+! remap wasd to arrow keys
+! keysym w = w W Up
+! keysym a = a A Left
+! keysym s = s S Down
+! keysym d = d D Right
+! keycode 25 = Up
+! keycode 38 = Left
+! keycode 39 = Down
+! keycode 40 = Right
+

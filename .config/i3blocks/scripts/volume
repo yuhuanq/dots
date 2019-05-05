@@ -1,0 +1,17 @@
+#!/bin/sh
+
+volc=$(/home/yqiu/.config/i3blocks/scripts/volumeGetFig)
+
+vol=$(echo "$volc" | tr -d "%")
+
+icon=""
+if [ "$volc" = "MUTE" ]; then
+    icon=""
+elif [ "$vol" -gt "49" ]; then
+    icon=""
+else
+    icon=""
+fi
+
+echo -e "$icon" "$volc"
+

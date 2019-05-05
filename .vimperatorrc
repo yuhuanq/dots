@@ -1,0 +1,97 @@
+" vimperator firefox addon config
+
+
+" Mappings --- {{{
+let mapleader = ','
+inoremap jj <esc>
+cnoremap jj <esc>
+"nnoremap j 3j
+"" typically want to scroll up faster
+"nnoremap k 10k
+nnoremap h 3h
+nnoremap l 3l
+nnoremap <leader>sv :source ~/.vimperatorrc<cr>
+noremap J :tabNext<CR>
+noremap K :tabnext<CR>
+
+" }}}
+
+" don't beep
+set noerrorbells
+
+set status=input,location,bookmark,history,tabcount,position
+
+" C-a selects all text
+inoremap <C-a> <C-Home><C-S-End>
+
+" set hintchars=qwertyuiopasdfghjkl
+set hintchars=asdfghjkl
+
+set gui=none,tabs,bookmarks
+
+set noscrollbars
+
+" Plugin settings
+let g:smooziee_scroll_amount="150"
+let g:smoozieUp_scroll_amount="300"
+let g:smooziee_scroll_interval="15"
+
+"colorscheme solarized_dark
+" colorscheme default
+colorscheme zenburn
+
+set ignorecase
+
+" remove HintElem highlighting/colors
+highlight HintElem color:; background-color:;
+highlight HintImage opacity: .7;
+highlight Hint font-family: monospace; font-size: 14px; font-weight: normal; color: #dc322f; background-color: #002b36; border-color: #839496; border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px; text-transform: uppercase; background-color: rgba(253, 246, 227, 0.7); border: 1px solid #fdf6e3; -moz-border-radius: 4px; -moz-box-shadow: 0px 0px 1px black;
+highlight HintActive background-color: #88FF00; color: black;
+
+" for single letter hints
+set hinttimeout=500
+
+" try to stay in normal mode
+set focuscontent
+
+
+"vnoremap J 0
+"vnoremap L $
+
+cabbrev TODO https://gist.github.com/yuhuanq/5f676a1b777a864e0aea33c31d3f94d7
+cabbrev todo https://gist.github.com/yuhuanq/5f676a1b777a864e0aea33c31d3f94d7
+
+set defsearch=google
+
+
+" Close all tabs to left and right functions
+js <<EOF
+
+closeAllToRight = function () {
+    var current = tabs.getTab();
+    var currentIx = tabs.index(current);
+    var nexttab = current.nextElementSibling;
+    var N = tabs.count;
+    var numToClose = N - (currentIx + 1);
+    tabs.remove(nexttab, numToClose);
+}
+
+closeAllToLeft = function () {
+    var current = tabs.getTab();
+    var currentIx = tabs.index(current);
+    var firsttab = tabs.getTab(0);
+    var N = tabs.count;
+    var numToClose = currentIx;
+    tabs.remove(firsttab, numToClose);
+}
+
+EOF
+
+" close tabs to left
+map x< :js closeAllToLeft()<CR>
+" close tabs to right
+map x> :js closeAllToRight()<CR>
+
+command! closealltoright :js closeAllToRight()
+command! closealltoleft :js closeAllToLeft()
+

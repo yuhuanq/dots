@@ -1,0 +1,7 @@
+#!/bin/sh
+
+level=$(cat '/sys/class/backlight/intel_backlight/brightness')
+perc=$(bc <<< "scale=2; $level/852")
+intm=$(bc <<< "scale=1; $perc * 100")
+intm=$( echo "$intm/1" | bc )
+echo -e "$intm%"
