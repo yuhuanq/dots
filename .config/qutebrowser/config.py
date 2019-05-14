@@ -6,6 +6,9 @@
 #
 # Distributed under terms of the MIT license.
 
+# load from autoconfig.yaml
+config.load_autoconfig()
+
 # c.tabs.position = "left"
 c.completion.shrink = True
 c.tabs.padding = {"top": 10, "bottom": 10, "left": 5, "right":5}
