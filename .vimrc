@@ -7,6 +7,7 @@
 " Plugin Management --- {{{
 call plug#begin('~/.vim/plugged')
 
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neomake/neomake'
 Plug 'the-lambda-church/coquille', { 'branch': 'pathogen-bundle'}
 Plug 'let-def/vimbufsync'
@@ -51,7 +52,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'terryma/vim-smooth-scroll'
 Plug 'ap/vim-buftabline'
 " Completion and Snippets
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': ['c','ocaml','javascript','vim','java','python']} " disa py for ycm bc bug
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': ['c','ocaml','javascript','vim','python']} " disa py for ycm bc bug
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer', 'for': ['ocaml','javascript','vim','java','python']} " disa py for ycm bc bug
 Plug 'thinca/vim-quickrun'
 

@@ -89,9 +89,9 @@ fi
 
 #export OPAMEXTERNALSOLVER="cudf_remote_proxy %{input}% %{output}% %{criteria}%"
 #export OPAMEXTERNALSOLVER="java -jar /home/yqiu/sources/p2Cudf.jar -obj %{criteria}% %{input}% %{output}%."
-eval $(opam config env)
-. /home/yqiu/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-eval $(opam config env)
+# eval $(opam config env)
+# . /home/yqiu/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# eval $(opam config env)
 
 BASE16_SHELL=$HOME/.config/base16-shell/
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
@@ -228,7 +228,7 @@ export NETID=yq56
 # export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.91-7.b14.fc24.x86_64
 # uncomment below
 # export JAVA_HOME=/usr/java/jdk1.8.0_171
-export JAVA_HOME=/usr/java/jdk1.8.0_144/jre/
+# export JAVA_HOME=/usr/java/jdk1.8.0_144/jre/
 # export JAVA_HOME=/usr/java/jdk-9.0.4
 SCALA_HOME=/usr/bin/scala
 #uncomment below
@@ -245,7 +245,14 @@ if [ -f '/home/yqiu/sources/google-cloud-sdk/path.zsh.inc' ]; then source '/home
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/yqiu/sources/google-cloud-sdk/completion.zsh.inc' ]; then source '/home/yqiu/sources/google-cloud-sdk/completion.zsh.inc'; fi
 export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$GOPATH/bin
 
 
 source ~/.autoenv/activate.sh
 source ~/.oh-my-zsh/custom/secrets.zsh
+
+xmodmap -e 'clear Lock'
+xmodmap -e 'keycode 0x7e = Control_R'
+xmodmap -e 'add Control = Control_R'
+

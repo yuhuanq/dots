@@ -39,7 +39,7 @@ font pango:System San Francisco Display 11
 # font, it doesn’t scale on retina/hidpi displays.
 
 # Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+floating_modifier $mod+Shift
 
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
@@ -250,9 +250,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%-
 bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
 
 # for convenience
-bindsym F1 exec --no-startup-id amixer -q set Master toggle
-bindsym F2 exec --no-startup-id amixer -q set Master 5%-
-bindsym F3 exec --no-startup-id amixer -q set Master 5%+
+# bindsym F1 exec --no-startup-id amixer -q set Master toggle
+# bindsym F2 exec --no-startup-id amixer -q set Master 5%-
+# bindsym F3 exec --no-startup-id amixer -q set Master 5%+
 
 #bindsym grave exec --no-startup-id "xdotool click 3; sleep .1; xdotool click 1"
 # bindsym grave exec --no-startup-id "xdotool click 1"

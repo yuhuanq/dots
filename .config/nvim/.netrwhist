@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/yqiu/Cornell/4410'
+let g:netrw_dirhist_2='/home/yqiu/Cornell/4410/yq56'
+let g:netrw_dirhist_3='/home/yqiu/Cornell/4410/yq56/a3'
+let g:netrw_dirhist_4='/home/yqiu/Cornell/4410/yq56/a3/database'
+let g:netrw_dirhist_5='/home/yqiu/.config/nvim'

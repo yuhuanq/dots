@@ -271,7 +271,7 @@ nmap <leader><tab> :Files<CR>
 let g:neomake_python_enabled_makers = ['mypy']
 let g:neomake_python_mypy_args = ['--ignore-missing-imports',
             \ '--follow-imports=skip', '--python-version', '3.5']
-let g:neomake_java_enabled_makers = ['javac']
+" let g:neomake_java_enabled_makers = ['javac']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "                       Language Servers Configurations                        "

@@ -25,6 +25,7 @@ c.content.host_blocking.lists = ['http://someonewhocares.org/hosts/hosts',
         'https://raw.githubusercontent.com/ZeroDot1/CoinBlockerLists/master/hosts_browser',]
 
 c.url.searchengines = {"DEFAULT":"https://www.google.com/search?hl=en&q={}"}
+# c.url.searchengines = {"DEFAULT":"https://cn.bing.com/search?q={}"}
 # c.content.user_stylesheets=['/home/yqiu/sources/solarized-everything-css/css/solarized-all-sites-dark.css']
 # c.content.user_stylesheets=['/home/yqiu/.config/qutebrowser/global-dark.css']
 
